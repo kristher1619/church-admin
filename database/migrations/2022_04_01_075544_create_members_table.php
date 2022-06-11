@@ -32,6 +32,7 @@ return new class extends Migration {
 
             $table->timestamps();
 
+            $table->unique(['first_name', 'last_name']);
         });
     }
 

@@ -4,6 +4,7 @@ namespace App\Nova\Members;
 
 use App\Enums\DonationTypeEnum;
 use App\Enums\MembershipStatusEnum;
+use App\Nova\Actions\ImportMemberActions;
 use App\Nova\Donations\Donations;
 use App\Nova\Members\Filters\BirthdaysFilter;
 use App\Nova\Members\Filters\MembershipStatusFilter;
@@ -146,6 +147,8 @@ class Members extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            ImportMemberActions::make()->standalone()
+        ];
     }
 }
