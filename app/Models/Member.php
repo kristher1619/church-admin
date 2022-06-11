@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\HasFullName;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -63,7 +64,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Member extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, HasFullName;
 
     protected $fillable = [
         'first_name', 'last_name', 'middle_name', 'dob', 'date_of_baptism', 'membership_status', 'sex', 'date_died'
@@ -74,11 +75,6 @@ class Member extends Model
         'dob' => 'date',
         'date_of_baptism' => 'date'
     ];
-
-    public function fullName(): Attribute
-    {
-        return Attribute::make(get: fn() => "$this->last_name, $this->first_name $this->middle_name");
-    }
 
     public function father(): BelongsTo
     {

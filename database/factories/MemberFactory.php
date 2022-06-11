@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Enums\DonationTypeEnum;
+use App\Enums\MembershipStatusEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,7 +23,7 @@ class MemberFactory extends Factory
             'middle_name'=>$this->faker->lastName(),
             'last_name'=>$this->faker->lastName(),
             'date_of_baptism'=>$this->faker->dateTimeBetween('-10 years'),
-            'membership_status'=>$this->faker->randomElement(DonationTypeEnum::cases()),
+            'membership_status'=>$this->faker->randomElement(MembershipStatusEnum::cases()),
             'dob'=>$this->faker->date(),
             'sex'=>$this->faker->randomElement(['Male', 'Female']),
         ];
