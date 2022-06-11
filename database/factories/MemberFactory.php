@@ -24,6 +24,7 @@ class MemberFactory extends Factory
             'date_of_baptism'=>$this->faker->dateTimeBetween('-10 years'),
             'membership_status'=>$this->faker->randomElement(DonationTypeEnum::cases()),
             'dob'=>$this->faker->date(),
+            'sex'=>$this->faker->randomElement(['Male', 'Female']),
         ];
     }
 }

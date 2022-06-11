@@ -2,9 +2,9 @@
 
 namespace App\Nova\Members;
 
-use App\Enums\DonationTypeEnum;
 use App\Enums\MembershipStatusEnum;
-use App\Nova\Actions\ImportMemberActions;
+use App\Nova\Actions\ExportMembersAction;
+use App\Nova\Actions\ImportMembersAction;
 use App\Nova\Donations\Donations;
 use App\Nova\Members\Filters\BirthdaysFilter;
 use App\Nova\Members\Filters\MembershipStatusFilter;
@@ -12,9 +12,7 @@ use App\Nova\Members\Lenses\ThisWeekBirthday;
 use App\Nova\Members\Metrics\BirthdaysPerMonth;
 use App\Nova\Members\Metrics\MembersPerStatus;
 use App\Nova\Members\Metrics\NewMembersPerMonth;
-use App\Nova\Metrics\DonationsMetric;
 use App\Nova\Resource;
-use Causelabs\ResourceIndexLink\ResourceIndexLink;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Laravel\Nova\Fields\Avatar;
@@ -24,12 +22,11 @@ use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\URL;
-use Pdewit\ExternalUrl\ExternalUrl;
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
 
 class Members extends Resource
 {
@@ -148,7 +145,8 @@ class Members extends Resource
     public function actions(Request $request)
     {
         return [
-            ImportMemberActions::make()->standalone()
+            ImportMembersAction::make()->standalone(),
+            ExportMembersAction::make()->standalone()
         ];
     }
 }

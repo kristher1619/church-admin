@@ -65,31 +65,34 @@ class Member extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['first_name', 'last_name', 'middle_name', 'dob', 'date_of_baptism', 'membership_status', 'sex', 'date_died'];
+    protected $fillable = [
+        'first_name', 'last_name', 'middle_name', 'dob', 'date_of_baptism', 'membership_status', 'sex', 'date_died'
+    ];
 
-    protected $casts=[
-        'dob'=>'date',
-        'date_of_baptism'=>'date'
+    protected $with = ['personal_information'];
+    protected $casts = [
+        'dob' => 'date',
+        'date_of_baptism' => 'date'
     ];
 
     public function fullName(): Attribute
     {
-        return Attribute::make(get: fn()=> "$this->last_name, $this->first_name $this->middle_name");
+        return Attribute::make(get: fn() => "$this->last_name, $this->first_name $this->middle_name");
     }
 
     public function father(): BelongsTo
     {
-       return $this->belongsTo(Member::class, 'father_id','id') ;
+        return $this->belongsTo(Member::class, 'father_id', 'id');
     }
 
     public function mother(): BelongsTo
     {
-        return $this->belongsTo(Member::class, 'mother_id','id') ;
+        return $this->belongsTo(Member::class, 'mother_id', 'id');
     }
 
     public function donations(): HasMany
     {
-       return $this->hasMany(Donation::class);
+        return $this->hasMany(Donation::class);
     }
 
     public function personal_information(): HasOne

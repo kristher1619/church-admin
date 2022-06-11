@@ -13,7 +13,7 @@ use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class ImportMemberActions extends Action
+class ImportMembersAction extends Action
 {
     use InteractsWithQueue, Queueable;
 

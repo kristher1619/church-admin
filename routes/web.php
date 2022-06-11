@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('download', function () {
+    $data = request()->validate([
+        'path' => 'required',
+        'filename' => 'required',
+    ]);
+
+    return response()->download(
+        decrypt($data['path']),
+        $data['filename']
+    )->deleteFileAfterSend(true);
+})->name('laravel-nova-excel.download')->middleware('signed');

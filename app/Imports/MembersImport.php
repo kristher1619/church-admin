@@ -6,8 +6,9 @@ use App\Models\Member;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithUpserts;
 
-class MembersImport implements ToCollection, WithHeadingRow
+class MembersImport implements ToCollection, WithHeadingRow, WithUpserts
 {
 
     public function collection(Collection $collection) {
@@ -37,5 +38,10 @@ class MembersImport implements ToCollection, WithHeadingRow
               'state' => $value['province'],
           ];
        });
+    }
+
+
+    public function uniqueBy() {
+        return ['first_name', 'last_name', 'deleted_at'];
     }
 }
