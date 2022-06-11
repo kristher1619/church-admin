@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc477fc30433b3e3da9f7da110c678d1",
+    "content-hash": "550234a772b61bccccb2b61706908cee",
     "packages": [
         {
             "name": "box/spout",
@@ -200,6 +200,61 @@
                 }
             ],
             "time": "2021-10-10T11:59:43+00:00"
+        },
+        {
+            "name": "causelabs/resource-index-link",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/causelabs/resource-index-link.git",
+                "reference": "688fcc124c96b8c4a72b1a0fa3a416fcf1d4715c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/causelabs/resource-index-link/zipball/688fcc124c96b8c4a72b1a0fa3a416fcf1d4715c",
+                "reference": "688fcc124c96b8c4a72b1a0fa3a416fcf1d4715c",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "*",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Causelabs\\ResourceIndexLink\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Causelabs\\ResourceIndexLink\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rick Sharp",
+                    "email": "rick@causelabs.com",
+                    "homepage": "http://www.causelabs.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A Laravel Nova Resource Index Link field.",
+            "keywords": [
+                "laravel",
+                "link",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/causelabs/resource-index-link/issues",
+                "source": "https://github.com/causelabs/resource-index-link/tree/master"
+            },
+            "time": "2019-01-17T20:23:17+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2716,6 +2771,51 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v4.14.0"
             },
             "time": "2022-05-31T20:59:12+00:00"
+        },
+        {
+            "name": "pdewit/nova-external-url",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pdewit/nova-external-url.git",
+                "reference": "3fe3b8cb62740dd833773665cbf4380c345c3206"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pdewit/nova-external-url/zipball/3fe3b8cb62740dd833773665cbf4380c345c3206",
+                "reference": "3fe3b8cb62740dd833773665cbf4380c345c3206",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Pdewit\\ExternalUrl\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pdewit\\ExternalUrl\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "An external URL Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/pdewit/nova-external-url/issues",
+                "source": "https://github.com/pdewit/nova-external-url/tree/master"
+            },
+            "time": "2018-11-26T14:51:33+00:00"
         },
         {
             "name": "phpoption/phpoption",

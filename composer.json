@@ -6,11 +6,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "causelabs/resource-index-link": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.11",
+        "laravel/nova": "~4.0",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "laravel/nova": "~4.0"
+        "pdewit/nova-external-url": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
