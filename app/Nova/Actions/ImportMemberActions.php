@@ -2,6 +2,8 @@
 
 namespace App\Nova\Actions;
 
+use App\Imports\MembersImport;
+use Excel;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
@@ -24,7 +26,7 @@ class ImportMemberActions extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        //
+        Excel::import(new MembersImport(), $fields['file']);
     }
 
     /**
