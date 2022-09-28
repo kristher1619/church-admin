@@ -33,7 +33,7 @@ class Visitor extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'first_name','last_name'
     ];
 
     /**

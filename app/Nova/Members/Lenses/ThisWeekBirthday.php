@@ -44,7 +44,7 @@ class ThisWeekBirthday extends Lens
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Avatar::make('Photo', 'photo')->disableDownload(),
-            ResourceIndexLink::make('Full name', 'last_name')->resolveUsing(fn() => $this->fullName)->sortable()->onlyOnIndex(),
+            Text::make('Full name', 'last_name')->resolveUsing(fn() => $this->fullName)->sortable()->onlyOnIndex(),
             Date::make('Date of Birth', 'dob')->resolveUsing(function(?Carbon $dob){
                 return $dob?->format('F d, Y');
             })->rules('required'),

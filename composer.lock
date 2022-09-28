@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "84b4d0cc99d55c8391b904d716e0f7c3",
+    "content-hash": "8dfcbeec08897a9d63ceeed505364dd9",
     "packages": [
         {
             "name": "box/spout",
@@ -6317,6 +6317,54 @@
                 }
             ],
             "time": "2022-05-21T13:34:40+00:00"
+        },
+        {
+            "name": "thijssimonis/nova-list-card",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thijssimonis/nova-list-card.git",
+                "reference": "4a768aaa3434e8fcba87b43bba4d8163af5be90e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thijssimonis/nova-list-card/zipball/4a768aaa3434e8fcba87b43bba4d8163af5be90e",
+                "reference": "4a768aaa3434e8fcba87b43bba4d8163af5be90e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ThijsSimonis\\NovaListCard\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ThijsSimonis\\NovaListCard\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "List rows in a table card.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/thijssimonis/nova-list-card/issues",
+                "source": "https://github.com/thijssimonis/nova-list-card/tree/1.1.1"
+            },
+            "time": "2021-08-18T22:47:12+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
